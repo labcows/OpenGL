@@ -3,23 +3,19 @@
 #include <GLFW/glfw3.h>
 
 int main() {
-    if (!glfwInit()) {
-        const char* description = nullptr;
-        glfwGetError(&description);
-        return -1;
-    }
+    glfwInit();
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    //glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); -- for Mac OS X
 
-    auto window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_NAME,
-                                   nullptr, nullptr);
-    if (!window) {
+    GLFWwindow *window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
+    if (window == NULL)
+    {
+        std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
         return -1;
     }
 
-    while (!glfwWindowShouldClose(window)) {
-        glfwPollEvents();
-    }
-
-    glfwTerminate();
     return 0;
 }
