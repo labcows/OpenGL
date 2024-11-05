@@ -31,6 +31,7 @@ int main() {
         return -1;
     }
 
+    glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
     // GLAD manages function pointers for OpenGL
