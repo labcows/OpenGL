@@ -17,5 +17,12 @@ int main() {
         return -1;
     }
 
+    // GLAD manages function pointers for OpenGL
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
+        std::cout << "Failed to initialize GLAD" << std::endl;
+        return -1;
+    }
+
     return 0;
 }
