@@ -3,10 +3,7 @@
 
 #include <iostream>
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-    glViewport(0, 0, width, height);
-}
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -50,3 +47,10 @@ int main() {
     glfwTerminate();
     return 0;
 }
+
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+}
+
