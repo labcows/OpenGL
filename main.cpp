@@ -41,9 +41,14 @@ int main() {
 
     while(!glfwWindowShouldClose(window))
     {
+        // input
         processInput(window);
-        glfwSwapBuffers(window);
+
+        // rendering commands
+
+        // check and call events and swap the buffers
         glfwPollEvents();
+        glfwSwapBuffers(window);
     }
 
     glfwTerminate();
